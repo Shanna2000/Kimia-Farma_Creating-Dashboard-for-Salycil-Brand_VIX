@@ -4,4 +4,38 @@ There are three types repository data:
 - Data Warehouse: The place where all the data gathered in one repository and most likely, the data very unstructure.
 - Data Lake: A derivative of the data warehouse but has been tidied up and more structured but the scope is still very broad
 - Data Mart: A dervative from a data lake and aimed for a particular field analysis data.
+For this task, we need to make a data mart with just contained Salicyl Brand from the Data Lake
 
+## Dataset
+The dataset formed Excel with three sheets: Sheet 'penjualan', 'pelanggan', and 'barang'
+- Sheet 'penjualan': contain sales data for the entire year
+- Sheet 'pelanggan': contain customer data
+- Sheet 'barang': contain products from Kimia Farma with several brands, including Salicyl Brand
+
+'''sql
+Create table Tabel_base_salicyl as
+select 
+	penjualan.id_cabang,
+	pelanggan.cabang_sales,
+	penjualan.id_customer,
+	pelanggan.nama,
+	penjualan.id_distributor,
+	penjualan.id_barang,
+	barang.nama_barang,
+	barang.lini,
+	penjualan.tanggal,
+	to_char(penjualan.tanggal, 'Month') as bulan,
+	penjualan.jumlah_barang,
+	penjualan.harga
+from penjualan 
+join barang on barang.kode_barang = penjualan.id_barang
+join pelanggan on penjualan.id_customer = pelanggan.id_customer
+where barang.lini = 'SLCYL'
+
+# My SQL Queries
+
+Here are some sample SQL queries that demonstrate the functionality of my project:
+
+```sql
+-- Query 1: Select all customers from the database
+SELECT * FROM customers;
