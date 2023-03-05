@@ -35,3 +35,9 @@ from penjualan
 join barang on barang.kode_barang = penjualan.id_barang
 join pelanggan on penjualan.id_customer = pelanggan.id_customer
 where barang.lini = 'SLCYL'
+```
+
+I creare the table base with the ERD:
+<p align="center">
+  <kbd><img src="ERD_Table_Base.png" width=500px></kbd><br>
+  Image 1. ERD for the making of Table Base
