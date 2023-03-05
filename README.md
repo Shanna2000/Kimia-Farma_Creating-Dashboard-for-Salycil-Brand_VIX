@@ -37,7 +37,12 @@ join pelanggan on penjualan.id_customer = pelanggan.id_customer
 where barang.lini = 'SLCYL'
 ```
 
-I creare the table base with the ERD:
+I create the table base with the ERD:
 <p align="center">
-  <kbd><img src="ERD_Table_Base.png" width=500px></kbd><br>
+  <kbd><img src="ERD Table Base.png" width=400px></kbd><br>
   Image 1. ERD for the making of Table Base
+  </p>
+
+The result of the Table Base:<br>
+[Link Dashboard Google Data Studio](https://lookerstudio.google.com/u/0/reporting/ba9ad45d-d78b-4483-b355-b39a18b9428a/page/25KHD)
+
