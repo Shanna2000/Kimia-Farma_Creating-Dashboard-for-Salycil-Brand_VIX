@@ -10,9 +10,13 @@ For this task, we need to make a data mart with just contained Salicyl Brand fro
 The dataset formed Excel with three sheets: Sheet 'penjualan', 'pelanggan', and 'barang'
 - Sheet 'penjualan': contain sales data for the entire year
 - Sheet 'pelanggan': contain customer data
-- Sheet 'barang': contain products from Kimia Farma with several brands, including Salicyl Brand
+- Sheet 'barang': contain products from Kimia Farma with several brands, including Salicyl Brand <br>
+From the database, we need to make Table Base and Table Aggregate. Table base contained raw data for the Salicyl Brand whereas Table Aggregate is derivied from Tabel Base and contain more short data to visualize with Google Data Studio
 
-'''sql
+## Table and SQL Queries
+### Table Base
+Here are my SQL Queries to create the Table Base: <br>
+```sql
 Create table Tabel_base_salicyl as
 select 
 	penjualan.id_cabang,
@@ -31,11 +35,3 @@ from penjualan
 join barang on barang.kode_barang = penjualan.id_barang
 join pelanggan on penjualan.id_customer = pelanggan.id_customer
 where barang.lini = 'SLCYL'
-
-# My SQL Queries
-
-Here are some sample SQL queries that demonstrate the functionality of my project:
-
-```sql
--- Query 1: Select all customers from the database
-SELECT * FROM customers;
