@@ -40,9 +40,41 @@ where barang.lini = 'SLCYL'
 I create the table base with the ERD:
 <p align="center">
   <kbd><img src="ERD Table Base.png" width=400px></kbd><br>
-  Image 1. ERD for the making of Table Base
+  Figure 1. ERD for the making of Table Base
   </p>
 
 The result of the Table Base:<br>
+<p align="center">
+  Table 1. Table Base <br>
+  <kbd><img src="Table_Base.png" width=700px></kbd>
+  </p>
+ 
+ ### Table Aggregate
+ Aggregate tables are generated from base tables which contain denser data and are used for data visualization with Google Data Studio.<br>
+ Here are my SQL Queries to create the Table Base: <br>
+ ```sql
+ create table tabel_aggregate_salycil as
+	select 
+		cabang_sales,
+		nama,
+		nama_barang,
+		bulan,
+		jumlah_barang,
+		pendapatan
+	from tabel_base_salicyl
+```
+The result of the Table Aggregate:<br>
+<p align="center">
+  Table 2. Table Aggregate<br>
+  <kbd><img src="Table_Aggregate.png" width=700px></kbd>
+  </p>
+
+## Dashboard
+Table Aggregate inputed to the Google Data Studio and created the dashboard. Here's the dashboard that I've been creating:
+<p align="center">
+  <kbd><img src="Dashboard_Kimia_Farma.png" width=650px></kbd><br>
+  Figure 2. Dashboard for Salicyl Brand Sales
+  </p>
+
 [Link Dashboard Google Data Studio](https://lookerstudio.google.com/u/0/reporting/ba9ad45d-d78b-4483-b355-b39a18b9428a/page/25KHD)
 
